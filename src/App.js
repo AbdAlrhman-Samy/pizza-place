@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './Components/Navbar';
+import Header from './Components/Header';
+import Restaurant from './Components/Restaurant';
+import Footer from './Components/Footer';
+import { useState } from 'react';
 
 function App() {
+
+  const [loaded, setLoaded] = useState(false)
+
+  window.addEventListener("load", ()=>{
+    setLoaded(true)
+  })
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    loaded?
+    <div className="App bg-dark min-h-screen">
+      <Navbar/>
+      <Header/>
+      <Restaurant/>
+      <Footer/>
+    </div>
+
+    :
+    
+    <div className='min-h-screen bg-dark text-center pt-72'>
+      <h1 className='text-6xl text-light animate-pulse'>Loading Page</h1>
     </div>
   );
 }
