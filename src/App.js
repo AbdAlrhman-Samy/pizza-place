@@ -1,8 +1,12 @@
 import Navbar from './Components/Navbar';
-import Header from './Components/Header';
-import Restaurant from './Components/Restaurant';
 import Footer from './Components/Footer';
+
+import Home from './Pages/Home';
+import Menu from './Pages/Menu';
+
 import { useState } from 'react';
+
+import { Routes, Route } from "react-router-dom";
 
 function App() {
 
@@ -17,10 +21,16 @@ function App() {
   return (
     loaded?
     <div className="App bg-dark min-h-screen">
+
       <Navbar/>
-      <Header/>
-      <Restaurant/>
+      
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/menu' element={<Menu/>}/>
+      </Routes>
+
       <Footer/>
+
     </div>
 
     :
