@@ -1,4 +1,5 @@
 import {motion} from "framer-motion"
+import {Link} from "react-router-dom"
 
 function Restaurant() {
 
@@ -31,8 +32,10 @@ function Restaurant() {
         <motion.div variants={imageVariants} whileHover="whileHover" whileTap="whileTap" className='hover:shadow-xl hover:shadow-dark bg-p6 bg-cover bg-center h-full rounded-lg shadow-md shadow-dark order-8'></motion.div>
 
         <div className='font-bold text-center text-xl md:order-9 order-3'>
+          <Link to="/menu">
             <motion.button animate={{rotate: [0, 3, -3, 0]}} transition={{repeat: Infinity, repeatDelay:2}} 
-            className=' border-primary border-2 shadow-lg shadow-dark p-2 rounded-xl font-semibold bg-secondary text-light'>Check out the Menu</motion.button>
+              className=' border-primary border-2 shadow-md hover:shadow-lg hover:shadow-dark shadow-dark p-2 rounded-xl font-semibold bg-secondary text-light'>Check out the Menu!</motion.button>
+          </Link>
         </div>
 
     </section>

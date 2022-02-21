@@ -1,19 +1,21 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 
-function Categories() {
+function Categories({setCategory, category}) {
 
     const catVariants={
         hover: {
-            scale: 1.5
+            scale: 1.25
+        },
+        tap: {
+            scale: .9
         }
     }
 
     return (
-        <div className='bg-primary max-w-4xl rounded-full mx-auto flex flex-row justify-evenly py-3 ring-2 ring-white ring-offset-2 ring-offset-dark'>
-            <motion.button variants={catVariants} whileHover="hover" className='text-2xl opacity-90 text-secondary font-semibold'>Drinks</motion.button>
-            <motion.button variants={catVariants} whileHover="hover" className='text-4xl opacity-90 text-secondary font-bold '>Pizza</motion.button>
-            <motion.button variants={catVariants} whileHover="hover" className='text-2xl opacity-90 text-secondary font-semibold'>Extras</motion.button>
+        <div className='bg-primary mb-8 max-w-4xl rounded-full mx-auto flex flex-row justify-evenly py-3 ring-2 ring-white ring-offset-2 ring-offset-dark'>
+            <motion.button onClick={()=>setCategory("drinks")} variants={catVariants} whileHover="hover" whileTap="tap" className={`${category==="drinks"? "text-4xl font-bold text-light opacity-100" : "text-2xl text-dark opacity-90 font-semibold"}`}>Drinks</motion.button>
+            <motion.button onClick={()=>setCategory("pizza")} variants={catVariants} whileHover="hover" whileTap="tap" className={`${category==="pizza"? "text-4xl font-bold text-light opacity-100" : "text-2xl text-dark opacity-90 font-semibold"}`}>Pizza</motion.button>
+            <motion.button onClick={()=>setCategory("extras")} variants={catVariants} whileHover="hover" whileTap="tap" className={`${category==="extras"? "text-4xl font-bold text-light opacity-100" : "text-2xl text-dark opacity-90 font-semibold"}`}>Extras</motion.button>
         </div>
     )
 }

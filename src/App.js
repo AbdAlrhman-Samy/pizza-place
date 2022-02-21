@@ -1,12 +1,16 @@
+import React from 'react';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-
-import Home from './Pages/Home';
-import Menu from './Pages/Menu';
-
 import { useState } from 'react';
 
 import { Routes, Route } from "react-router-dom";
+
+import { AnimatePresence } from 'framer-motion';
+
+const Home = React.lazy(() => import("./Pages/Home"));
+const Menu = React.lazy(() => import("./Pages/Menu"));
+const Gallery = React.lazy(() => import("./Pages/Gallery"));
+
 
 function App() {
 
@@ -23,11 +27,16 @@ function App() {
     <div className="App bg-dark min-h-screen">
 
       <Navbar/>
+
+      <AnimatePresence exitBeforeEnter>
+        <Routes>
+          <Route path='/' element={<React.Suspense fallback={<>...</>}><Home /></React.Suspense>}/>
+          <Route path='/menu' element={<React.Suspense fallback={<>...</>}><Menu /></React.Suspense>}/>
+          <Route path='/gallery' element={<React.Suspense fallback={<>...</>}><Gallery /></React.Suspense>}/>
+        </Routes>
+      </AnimatePresence>
       
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/menu' element={<Menu/>}/>
-      </Routes>
+      
 
       <Footer/>
 
