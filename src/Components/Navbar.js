@@ -20,7 +20,7 @@ function Navbar() {
     }
 
   return (
-    <nav className='absolute w-full text-light bg-dark
+    <nav className='absolute w-full text-light md:bg-dark
     md:px-20 py-1 flex md:flex-row flex-col md:justify-between justify-center items-center z-50'>
 
         <div className='md:w-max md:block w-full flex justify-between px-7 py-3'>
@@ -46,7 +46,7 @@ function Navbar() {
             initial={{x: -1000}}
             animate={{x: [-1000, 0]}}
             transition={{duration:0.25}}
-            className='flex flex-col justify-center text-center text-light gap-10 md:hidden text-5xl h-full py-12 w-full px-10 border-b-2 border-primary'>
+            className='flex flex-col justify-center text-center bg-dark text-light gap-10 md:hidden text-5xl h-full py-12 w-full px-10 border-b-2 border-primary'>
 
                 <Link to="/"><motion.button onClick={()=>setOpen(false)} variants={navVariants} whileTap="whileTap" className={`${location.pathname==="/"? "font-bold text-primary" : "hover:text-primary"}`} >Home</motion.button></Link>
                 <Link to="/menu"><motion.button onClick={()=>setOpen(false)} variants={navVariants} whileTap="whileTap" className={`${location.pathname==="/menu"? "font-bold text-primary" : "hover:text-primary"}`}>Menu</motion.button></Link>

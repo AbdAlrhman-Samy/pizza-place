@@ -20,15 +20,13 @@ function App() {
     setLoaded(true)
   })
 
-
-
   return (
     loaded?
-    <div className="App bg-dark min-h-screen">
+    <div className="App bg-dark min-h-screen overflow-x-hidden overflow-y-hidden">
 
       <Navbar/>
 
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence exitBeforeEnter="true">
         <Routes>
           <Route path='/' element={<React.Suspense fallback={<>...</>}><Home /></React.Suspense>}/>
           <Route path='/menu' element={<React.Suspense fallback={<>...</>}><Menu /></React.Suspense>}/>
