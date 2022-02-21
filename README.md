@@ -1,12 +1,13 @@
 # Restaurant Demo Website
 
-> Who doesn't like Pizza? I refuse to accept an answer other than "Nobody".
+> Who doesn't like Pizza?
+
+See it live [Here!](https://pizza-salta3.netlify.app/)
 
 This website was made for me to learn TailwindCSS and I picked up Framer Motion along the way.
 
 ```
 Status: WIP
-
 ```
 
 ### Technologies Used: 
