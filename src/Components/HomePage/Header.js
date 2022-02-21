@@ -10,7 +10,7 @@ function Header() {
             <h3 className='md:text-xl text-lg font-extralight text-light/80'>It's <em className="text-primary">The Pizza</em> for you & me.</h3>
         </motion.div>
 
-        <img src={pizza} alt="pizza" className='w-auto md:max-h-72 max-h-96' height="24rem" width="auto"/>
+        <img src={pizza} alt="pizza" className='w-auto md:max-h-72 max-h-96' height="360" width="640"/>
 
     </header>
   )
