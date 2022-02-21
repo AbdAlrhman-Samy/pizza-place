@@ -1,5 +1,5 @@
 import {motion} from "framer-motion"
-import pizza from "../../Static/pizza-header.png"
+import pizza from "../../Static/pizza-header.webp"
 
 function Header() {
   return (

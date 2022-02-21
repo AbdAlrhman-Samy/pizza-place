@@ -1,6 +1,6 @@
-import pizzaImg from "../../Static/pizza.png"
-import drinkImg from "../../Static/cola.png"
-import extrasImg from "../../Static/cheesecake.png"
+import pizzaImg from "../../Static/pizza.webp"
+import drinkImg from "../../Static/cola.webp"
+import extrasImg from "../../Static/cheesecake.webp"
 
 import {motion} from "framer-motion"
 
