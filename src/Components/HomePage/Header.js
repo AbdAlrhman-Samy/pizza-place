@@ -7,7 +7,7 @@ function Header() {
 
         <motion.div animate={{opacity:[0, 1]}} transition={{duration:1}} className='text-light px-3 lg:text-left text-center'>
             <h1 className='md:text-7xl text-5xl font-extrabold leading-tight md:mb-5'>KrustyKrab's Pizza</h1>
-            <h3 className='md:text-xl text-lg font-extralight text-light/80'>It's <em className="text-primary">The Pizza</em> for you & me.</h3>
+            <h2 className='md:text-xl text-lg font-extralight text-light/80'>It's <em className="text-primary">The Pizza</em> for you & me.</h2>
         </motion.div>
 
         <img src={pizza} alt="pizza" className='w-auto md:max-h-72 max-h-96' height="360" width="640"/>
