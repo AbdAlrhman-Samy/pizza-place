@@ -11,7 +11,7 @@ function Menu() {
 
 
     return (
-        <motion.div key="menu" initial={{y:1000}} exit={{opacity: 0}} animate={{y:0}} transition={{duration:.15, type:"spring", stiffness:100}}
+        <motion.div key="menu" initial={{x:1000}} exit={{opacity: 0}} animate={{x:0}} transition={{duration:.35, type:"spring", }}
         className="min-h-screen text-light relative py-32 px-5">
             <Categories setCategory={setCategory} category={category} />
             <MenuList category={category}/>

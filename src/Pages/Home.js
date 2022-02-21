@@ -6,7 +6,7 @@ import {motion} from "framer-motion"
 function Home() {
     
     return (
-        <motion.div key="home" initial={{y:1000}} exit={{opacity: 0}} animate={{y:0}} transition={{duration:.25, type:"spring", stiffness:100}}>
+        <motion.div key="home" initial={{x:1000}} exit={{opacity: 0}} animate={{x:0}} transition={{duration:.35, type:"spring", }}>
             <Header/>
             <Restaurant/>
         </motion.div>

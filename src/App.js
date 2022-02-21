@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 
 import { AnimatePresence } from 'framer-motion';
 
+
 const Home = React.lazy(() => import("./Pages/Home"));
 const Menu = React.lazy(() => import("./Pages/Menu"));
 const Gallery = React.lazy(() => import("./Pages/Gallery"));
@@ -14,37 +15,23 @@ const Gallery = React.lazy(() => import("./Pages/Gallery"));
 
 function App() {
 
-  const [loaded, setLoaded] = useState(false)
-
-  window.addEventListener("load", ()=>{
-    setLoaded(true)
-  })
-
   return (
-    loaded?
     <div className="App bg-dark min-h-screen overflow-x-hidden overflow-y-hidden">
 
       <Navbar/>
 
       <AnimatePresence exitBeforeEnter="true">
         <Routes>
-          <Route path='/' element={<React.Suspense fallback={<>...</>}><Home /></React.Suspense>}/>
-          <Route path='/menu' element={<React.Suspense fallback={<>...</>}><Menu /></React.Suspense>}/>
-          <Route path='/gallery' element={<React.Suspense fallback={<>...</>}><Gallery /></React.Suspense>}/>
+          <Route path='/' element={<React.Suspense fallback={<h1 className='text-7xl text-primary text-center py-52'>Loading Content</h1>}><Home /></React.Suspense>}/>
+          <Route path='/menu' element={<React.Suspense fallback={<h1 className='text-7xl text-primary text-center py-52'>Loading Content</h1>}><Menu /></React.Suspense>}/>
+          <Route path='/gallery' element={<React.Suspense fallback={<h1 className='text-7xl text-primary text-center py-52'>Loading Content</h1>}><Gallery /></React.Suspense>}/>
         </Routes>
       </AnimatePresence>
       
-      
-
       <Footer/>
 
     </div>
 
-    :
-    
-    <div className='min-h-screen bg-dark text-center pt-72'>
-      <h1 className='text-6xl text-light animate-pulse'>Loading Page</h1>
-    </div>
   );
 }
 
