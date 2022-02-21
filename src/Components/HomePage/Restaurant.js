@@ -33,7 +33,7 @@ function Restaurant() {
 
         <div className='font-bold text-center text-xl md:order-9 order-3'>
           <Link to="/menu">
-            <motion.button animate={{rotate: [0, 3, -3, 0]}} transition={{repeat: Infinity, repeatDelay:2}} 
+            <motion.button animate={{rotate: [0, 3, -3, 0]}} transition={{repeat: Infinity, repeatDelay:2}} aria-label="restaurant menu page button"
               className=' border-primary border-2 shadow-md hover:shadow-lg hover:shadow-dark shadow-dark p-2 rounded-xl font-semibold bg-secondary text-light'>Check out the Menu!</motion.button>
           </Link>
         </div>
