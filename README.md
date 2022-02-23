@@ -12,7 +12,7 @@ Status: WIP
 ---
 Dashboard on Contentful:
 
-![Contentful](./contentful dashboard.jpg)
+![Contentful](./contentful.jpg)
 
 ---
 Front end:
