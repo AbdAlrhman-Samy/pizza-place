@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-import { useState } from 'react';
+
 
 import { Routes, Route } from "react-router-dom";
 
@@ -14,6 +14,7 @@ const Gallery = React.lazy(() => import("./Pages/Gallery"));
 
 
 function App() {
+
 
   return (
     <div className="App bg-dark min-h-screen overflow-x-hidden overflow-y-hidden">

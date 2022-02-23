@@ -1,18 +1,16 @@
-import pizzaImg from "../../Static/pizza.webp"
-import drinkImg from "../../Static/cola.webp"
-import extrasImg from "../../Static/cheesecake.webp"
-
 import {motion} from "framer-motion"
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-function MenuItem({title, category}) {
+function MenuItem({data}) {
+
   return (
-    <motion.div key={title} initial={{opacity:0}} exit={{opacity: 0}} animate={{opacity: 1}} transition={{duration:0.25}}
-    className='flex flex-col justify-between max-w-xs bg-black rounded-lg shadow-sm shadow-primary py-3 md:px-5 px-2 items-center text-center'>
-        <img src={category==="pizza"? pizzaImg : (category === "drinks" ? drinkImg : extrasImg)} alt="pizza" className='rounded-full mb-3' height="320" width="320"/>
+    <motion.div initial={{opacity:0}} exit={{opacity: 0}} animate={{opacity: 1}} transition={{duration:0.25}}
+    className='flex flex-col justify-between max-w-xs bg-black rounded-lg shadow-sm shadow-primary py-5 md:px-5 px-2 items-center text-center h-80'>
+        <img src={`https:${data.menuImage.fields.file.url}`} alt="pizza" className='rounded-2xl mb-3 h-1/2 w-auto object-cover' height={data.menuImage.fields.file.details.image.height} width={data.menuImage.fields.file.details.image.width}/>
         <div>
-            <h6 className='text-xl font-bold'>{title}</h6>
-            <span className='text-base font-semibold text-primary block'>20EGP</span>
-            <span className='text-sm font-light'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores, temporibus.</span>
+            <h6 className='text-xl font-bold'>{data.name}</h6>
+            <span className='text-lg font-semibold text-primary block'>{data.price}EGP</span>
+            <span className='text-base font-light'>{documentToReactComponents(data.description)}</span>
         </div>
     </motion.div>
   )
