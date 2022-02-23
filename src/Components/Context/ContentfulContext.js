@@ -4,8 +4,8 @@ import { createClient } from "contentful";
 export const ContentfulContext = createContext()
 
 const client = createClient({
-    space: 'teqvjbjquiuz',
-    accessToken: 'CVUeVjt_JySgg9HspUmjrFmWAsQZFt4eJ4xfynvt7Bc',
+    space: process.env.REACT_APP_CONTENTFUL_SPACE,
+    accessToken: process.env.REACT_APP_ACCESS_TOKEN,
   });
 
 const ContentfulProvider = ({children})=> {
