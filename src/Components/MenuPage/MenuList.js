@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { ContentfulContext } from '../Context/ContentfulContext'
+import { ContentfulContext } from '../../Context/ContentfulContext'
 
 import MenuItem from "./MenuItem"
 import { motion, AnimatePresence } from "framer-motion"

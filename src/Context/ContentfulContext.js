@@ -11,10 +11,10 @@ const client = createClient({
 const ContentfulProvider = ({children})=> {
 
     const [data, setData] = useState()
-    const [category, setCategory] = useState("pizzas")
+    const [content, setContent] = useState("pizzas")
 
     const fetchContentfulData = async () => {
-        const res = await client.getEntries({content_type: category})
+        const res = await client.getEntries({content_type: content})
         return res
     }
 
@@ -29,12 +29,12 @@ const ContentfulProvider = ({children})=> {
       return () => {
         return unsub
       }
-    }, [category])
+    }, [content])
     
 
 
     return(
-        <ContentfulContext.Provider value={[data, category, setCategory]}>
+        <ContentfulContext.Provider value={[data, content, setContent]}>
             {children}
         </ContentfulContext.Provider>
     )
