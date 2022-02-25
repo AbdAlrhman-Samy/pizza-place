@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 function Categories() {
 
-    const [data, content, setContent] = useContext(ContentfulContext)
+    const {content, setContent} = useContext(ContentfulContext)
     const categories = ['drinks', 'pizzas', 'extras']
 
     const catVariants={

@@ -2,7 +2,6 @@ import React from 'react';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 
-import ContentfulProvider from './Context/ContentfulContext';
 
 import { Routes, Route } from "react-router-dom";
 
@@ -20,20 +19,18 @@ function App() {
   return (
     <div className="App bg-dark min-h-screen overflow-x-hidden overflow-y-hidden">
 
-      <ContentfulProvider>
-        <Navbar/>
+      <Navbar/>
 
-        <AnimatePresence exitBeforeEnter="true">
-          <Routes>
-            <Route path='/' element={<React.Suspense fallback={<h1 className='text-7xl text-primary text-center h-screen'>Loading Content</h1>}><Home /></React.Suspense>}/>
-            <Route path='/menu' element={<React.Suspense fallback={<h1 className='text-7xl text-primary text-center h-screen'>Loading Content</h1>}><Menu /></React.Suspense>}/>
-            <Route path='/gallery' element={<React.Suspense fallback={<h1 className='text-7xl text-primary text-center h-screen'>Loading Content</h1>}><Gallery /></React.Suspense>}/>
-            <Route path='*' element={<Error/>}/>
-          </Routes>
-        </AnimatePresence>
-        
-        <Footer/>
-      </ContentfulProvider>
+      <AnimatePresence exitBeforeEnter="true">
+        <Routes>
+          <Route path='/' element={<React.Suspense fallback={<h1 className='text-7xl text-primary text-center py-52'>Loading Content</h1>}><Home /></React.Suspense>}/>
+          <Route path='/menu' element={<React.Suspense fallback={<h1 className='text-7xl text-primary text-center py-52'>Loading Content</h1>}><Menu /></React.Suspense>}/>
+          <Route path='/gallery' element={<React.Suspense fallback={<h1 className='text-7xl text-primary text-center py-52'>Loading Content</h1>}><Gallery /></React.Suspense>}/>
+          <Route path='*' element={<Error/>}/>
+        </Routes>
+      </AnimatePresence>
+      
+      <Footer/>
 
     </div>
 

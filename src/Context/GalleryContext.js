@@ -1,17 +1,17 @@
 import { useState, useEffect, createContext } from "react";
 import client from "../ContentfulClient";
 
-export const ContentfulContext = createContext()
+export const GalleryContext = createContext()
 
-const ContentfulProvider = ({children})=> {
+
+const GalleryProvider = ({children})=> {
 
     const [data, setData] = useState()
-    const [content, setContent] = useState("pizzas")
     const [error, setError] = useState()
     
 
     const fetchContentfulData = async () => {
-        const res = await client.getEntries({content_type: content})
+        const res = await client.getEntries({content_type: "galleryImages"})
         return res
     }
 
@@ -20,28 +20,25 @@ const ContentfulProvider = ({children})=> {
         .then(data=>{
             setData(data.items)
         }).catch(error=>{
-            console.log(error);
             setError(error)
         })
     
       return () => {
         return unsub
       }
-    }, [content])
+    }, [])
     
     const value = {
         data,
-        content,
-        setContent,
         error,
     }
 
 
     return(
-        <ContentfulContext.Provider value={value}>
+        <GalleryContext.Provider value={value}>
             {children}
-        </ContentfulContext.Provider>
+        </GalleryContext.Provider>
     )
 }
 
-export default ContentfulProvider
+export default GalleryProvider
